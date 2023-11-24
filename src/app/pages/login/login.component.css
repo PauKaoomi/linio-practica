@@ -1,0 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/exo-2');
+.login{
+    background-color: white;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.fondoBanner{
+    background: linear-gradient(217deg , rgba(191,4,179), rgba(242,62,22));
+    color: white;
+    border-radius: 5px 0px 0px 5px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.imagenFondo{
+    background-image: url(https://media.discordapp.net/attachments/1122386515734048849/1177372945472032909/imagewhite.png?ex=65724500&is=655fd000&hm=a724d7420e6b6391e8db525f2ad26f88e52ca9f40127c097669a6fa691c8059a&=&format=webp&width=860&height=590);
+    height: 85vh;
+    width: 120vh;
+    max-width: 100%;
+    background-repeat: no-repeat;
+}
