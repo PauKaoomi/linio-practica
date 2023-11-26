@@ -1,16 +1,26 @@
-<div class="card mx-2" style="width: 18rem;">
-    <img src="{{img}}" class="card-img-top" style="height: 18rem;">
-    <div class="d-flex ms-1">
-        <span class="{{badgeInfo}}">Envío gratis</span>
-        <span class="{{badgeInfoTwo}}">BLACKFRIDAY</span>
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-        <p class="card-text">Por {{vendedor}}</p>
-        <p class="card-text fs-5">{{precio}} <span class="badge text-bg-danger">{{porcentajeDescuento}}</span></p>
-        <p class="text-secondary"><s>{{descuento}}</s></p>
-        <div class="d-grid gap-2">
-            <a href="#" class="btn btn-success" style="--bs-btn-bg: rgb(179, 20, 179); --bs-btn-border-color: rgb(179, 20, 179); --bs-btn-hover-bg:rgb(154, 27, 154);--bs-btn-hover-border-color:rgb(154, 27, 154);">Agregar al Carro <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a>
+<div class="d-flex flex-wrap">
+    @for(productos of productos; track productos.name){
+        <div class="card mx-2 mb-2" style="width: 17rem; height: 32rem;">
+            <img src="{{productos.img}}" class="card-img-top" style="height: 15rem;">
+            <div class="d-flex ms-1">
+                <span class="{{productos.badgeEnvio}}">Envío gratis</span>
+                <span class="{{productos.badgePromo}}">BLACKFRIDAY</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{productos.name}}</h5>
+                <p class="card-text">Por {{productos.vendedor}}</p>
+                <p class="card-text fs-5 mb-0">{{productos.precio}} <span class="badge text-bg-danger">{{productos.porcentajeDescuento}}</span></p>
+                <p class="text-secondary"><s>{{productos.descuento}}</s></p>
+            </div>
+                <div class="d-grid gap-2 mb-2 mx-3">
+                    <a class="btn btn-success" (click)="agregarCarrito(productos.id)"
+                        style="--bs-btn-bg: #BF04B3; --bs-btn-border-color: #BF04B3; --bs-btn-hover-bg:#F21B6A;--bs-btn-hover-border-color:#F21B6A;--bs-btn-active-bg:#BF04B3;--bs-btn-active-border-color:#BF04B3;">Agregar
+                        al Carro <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg></a>
+                </div>
         </div>
-    </div>
-  </div>
+    }
+</div>

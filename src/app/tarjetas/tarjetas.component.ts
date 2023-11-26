@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,12 +9,119 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tarjetas.component.css'
 })
 export class TarjetasComponent {
-  @Input() title: string = 'Xiaomi poco m3 pro 5G 64 gb azul hielo 4 ram + realme watch 2 pro';
-  @Input() img: String = "https://cdn.discordapp.com/attachments/1122386515734048849/1176337574294458399/Captura_de_pantalla_2023-11-20_203606.png?ex=656e80bd&is=655c0bbd&hm=21fbea7c3d2f7de59fea9f5f88a1505a4e4dbc0f7dabf4cf11dae6cd845c56a5&"
-  @Input() vendedor:string= "River Tecnology";
-  @Input() precio:string= "$1.139.900";
-  @Input() descuento:string= "$1.139.900";
-  @Input() porcentajeDescuento:string= "-26%";
-  @Input() badgeInfo:string= "badge text-bg-secondary";
-  @Input() badgeInfoTwo:string= "badge text-bg-dark ms-1";
+  agregarCarrito(id:string){
+    console.log(id)
+  }
+  productos = [
+    {
+      id: "1",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177576279587962910/image.png?ex=6573025f&is=65608d5f&hm=05a500581e7dc6ea5d3943da6dc315d52ed5ee4341315539714042a3928fb187&=&format=webp&width=251&height=212",
+      name: "Consola Nintendo Switch Oled Neon Negra",
+      vendedor: "Nintendo",
+      badgeEnvio: "d-none",
+      badgePromo: "badge text-bg-dark ms-1",
+      precio: "$ 1.359.900",
+      porcentajeDescuento: "-19%",
+      descuento: "$ 1.679.880",
+    },
+    {
+      id: "2",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177579577405612082/gsc_126342642_4532545_1.webp?ex=65730571&is=65609071&hm=79559824fcfc2dea3f0d6fbcda9bdea4183320acc0c53d94c76e3730e6a2b522&=&format=webp&width=264&height=264",
+      name: "Consola Playstation 5 Digital",
+      vendedor: "Sony Colombia",
+      badgeEnvio: "badge text-bg-secondary",
+      badgePromo: "badge text-bg-dark ms-1",
+      precio: "$ 2.349.900",
+      porcentajeDescuento: "-18%",
+      descuento: "$ 2.879.880",
+    },
+    {
+      id: "3",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177577281024176168/gsc_125363913_4282090_1.webp?ex=6573034e&is=65608e4e&hm=8f66147f5fca3a67d0824b83cdca91dd4a1d460b9444231a2ea8bbc56ec3b339&=&format=webp&width=264&height=264",
+      name: "Super Mario Wonder Nintendo Switch Juego",
+      vendedor: "Bliss Technology",
+      badgeEnvio: "d-none",
+      badgePromo: "d-none",
+      precio: "$ 219.900",
+      porcentajeDescuento: "-17%",
+      descuento: "$ 263.880",
+    },
+    {
+      id: "4",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177577703340249088/gsc_119630218_2051855_1.webp?ex=657303b2&is=65608eb2&hm=4ae1e90552d81eb7dbae28af370d0800c37ec4ec6401e893ac091c45e06f3058&=&format=webp&width=264&height=264",
+      name: "Consola Nintendo Switch Lite",
+      vendedor: "Bliss Technology",
+      badgeEnvio: "badge text-bg-secondary",
+      badgePromo: "badge text-bg-dark ms-1",
+      precio: "$ 949.900",
+      porcentajeDescuento: "-21%",
+      descuento: "$ 1.199.880",
+    },
+    {
+      id: "5",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177578290001760346/gsc_120489503_2690351_1.webp?ex=6573043e&is=65608f3e&hm=abeb7eb531ee82ca78dcdfa65426de206435d7eeb24508594a735fa439ea84fc&=&format=webp&width=264&height=264",
+      name: "The Legend Of Zelda Tears Of The Kingdom",
+      vendedor: "Gamers World",
+      badgeEnvio: "badge text-bg-secondary",
+      badgePromo: "badge text-bg-dark ms-1",
+      precio: "$ 229.900",
+      porcentajeDescuento: "-17%",
+      descuento: "$ 275.880",
+    },
+    {
+      id: "6",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177580398126043236/gsc_119638719_2052190_1.webp?ex=65730635&is=65609135&hm=0c2a597f182db4dc81b37e568a9d48ba521316dd67c95aea2c5f22344bc6c505&=&format=webp&width=264&height=264",
+      name: "Spiderman Miles Morales PS5 Juego Playstation 5",
+      vendedor: "Gamers World",
+      badgeEnvio: "d-none",
+      badgePromo: "d-none",
+      precio: "$ 159.900",
+      porcentajeDescuento: "-22%",
+      descuento: "$ 203.880",
+    },
+    {
+      id: "7",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177582211961200721/gsc_119630027_2051722_1.webp?ex=657307e5&is=656092e5&hm=4c85fb33bf363bdf886197b9d8c11a7c0cd7b6f6f3ce806dd5491fa2b0f53145&=&format=webp&width=264&height=264",
+      name: "Xbox Series S 512GB",
+      vendedor: "Xtreme Play",
+      badgeEnvio: "badge text-bg-secondary",
+      badgePromo: "badge text-bg-dark ms-1",
+      precio: "$ 1.414.900",
+      porcentajeDescuento: "-19%",
+      descuento: "$ 1.739.880",
+    },
+    {
+      id: "8",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177581244712747028/gsc_123420408_3683570_1.webp?ex=657306ff&is=656091ff&hm=315a11cd48aecadf65e1ec2ff81764534cd4f090d0700c63e530c86e5cbf057e&=&format=webp&width=264&height=264",
+      name: "Elden Ring Ps4 Juego Playstation 4",
+      vendedor: "Gamers World",
+      badgeEnvio: "d-none",
+      badgePromo: "d-none",
+      precio: "$ 259.900",
+      porcentajeDescuento: "-20%",
+      descuento: "$ 324.875",
+    },
+    {
+      id: "9",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1177581244209438750/gsc_118315970_2052352_2.webp?ex=657306ff&is=656091ff&hm=f9c27121968c6f122d7c82c7f90d8854867b688883248a3698061e6f70697dde&=&format=webp&width=264&height=264",
+      name: "Control PS5 Blanco - PlayStation 5",
+      vendedor: "Bliss Technology",
+      badgeEnvio: "badge text-bg-secondary",
+      badgePromo: "badge text-bg-dark ms-1",
+      precio: "$ 304.900",
+      porcentajeDescuento: "-24%",
+      descuento: "$ 401.880",
+    },
+    {
+      id: "10",
+      img: "https://media.discordapp.net/attachments/1122386515734048849/1178139408629768193/gsc_122367742_3337468_2.webp?ex=65750ed3&is=656299d3&hm=8cebdff7aab75d68195931b515e1543f7b3ed0620ee3833516958fce0ee2f0fb&=&format=webp&width=264&height=264",
+      name: "Control Original Xbox Series Sx Sunkissed Vibes Ed Especial",
+      vendedor: "Bliss Technology",
+      badgeEnvio: "d-none",
+      badgePromo: "d-none",
+      precio: "$ 304.900",
+      porcentajeDescuento: "",
+      descuento: "",
+    }
+  ]
 }
